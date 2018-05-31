@@ -1,0 +1,11 @@
+.idea/
+bin/
+.settings/
+cmake-build-*/
+inc/ui
+src/ui
+obj/
+.cproject
+.project
+codealike.json
+lib/*
