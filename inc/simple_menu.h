@@ -6,15 +6,20 @@
 #define INNO14_D_2017_INNO_MENU_H
 
 #include <ui/menus/menu_group.h>
-#include <ui/color_schemes/futurism.h>
 #include <ui/menus/menu_number.h>
 #include <ui/fonts/humanist.h>
 #include <ui/fonts/blocky.h>
 #include <adapters/context_adapter.h>
+#include <adapters/application.h>
 
-class SimpleMenu {
+class SimpleMenu: public virtual Application {
 public:
-    static void run();
+    void start() override;
+
+    static void show() {
+        SimpleMenu menu;
+        menu.run();
+    };
 };
 
 

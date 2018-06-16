@@ -2,14 +2,18 @@
 
 # LibUI for Windows
 
+![Screenshot](screenshot.png)
+
 This is an example implementation of LibUI on Windows, following requirements in LibUI, to implement required adapters to connect  with`windows.h` API in creating a GDI application.
 
 The example project has a `SimpleMenu` class to run a simple menu. And the implemented adapters are as follow:
 
 - `adapters::ContextAdapter`
+  
   Completes the logic for `ui::Context`.
 
 - `adapters::JoystickAdapter`
+  
   Keyboard inputs will substitute the 5-way switch inputs:
 
   - Arrow Up: Up
@@ -20,6 +24,7 @@ The example project has a `SimpleMenu` class to run a simple menu. And the imple
   - Any other key: Idle (Dummy input. No practical usages)
 
 - `adapters::ScreenAdapter`
+  
   Draws in the application screen. Two parameters are added: `offset_x`, `scaling`
 
 - `adapters::BatteryMeterAdapter`

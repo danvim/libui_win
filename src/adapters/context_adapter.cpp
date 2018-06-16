@@ -102,8 +102,16 @@ namespace adapters {
     }
 
     uint32_t ContextAdapter::getSystemTime() {
-        return (uint32_t) time(nullptr);
+        return (uint32_t) std::chrono::duration_cast< std::chrono::milliseconds >(
+                std::chrono::system_clock::now().time_since_epoch()
+        ).count();
     }
 
     bool ContextAdapter::running_menu = true;
+
+    void ContextAdapter::remapJoystickDirections(ui::JoystickState up, ui::JoystickState down, ui::JoystickState left,
+                                                 ui::JoystickState right, ui::JoystickState select,
+                                                 ui::JoystickState idle) {
+
+    }
 }

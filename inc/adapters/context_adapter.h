@@ -18,9 +18,9 @@
 #include "screen_adapter.h"
 #include "battery_meter_adapter.h"
 #include "joystick_adapter.h"
-
 #include <wincon.h>
 #include <thread>
+#include <chrono>
 
 namespace adapters {
     class ContextAdapter: public virtual ui::adapters::ContextAdapterInterface {
@@ -42,6 +42,10 @@ namespace adapters {
         void prepareListenerEvents() override;
 
         uint32_t getSystemTime() override;
+
+        void remapJoystickDirections(ui::JoystickState up, ui::JoystickState down, ui::JoystickState left,
+                                     ui::JoystickState right, ui::JoystickState select,
+                                     ui::JoystickState idle) override;
 
         static std::function<void(KEY_EVENT_RECORD)> joystick_listeners_dispatcher;
 
